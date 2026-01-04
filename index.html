@@ -1,0 +1,89 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fotag - Microstock Metadata Tool</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/piexifjs@1.0.6/piexif.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              brand: {
+                blue: '#098DE2',
+              },
+              gray: {
+                900: '#121212', // Darker gray for the background
+                800: '#1e1e1e',
+                700: '#2d2d2d',
+              }
+            },
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+            },
+            animation: {
+              'hue-cycle': 'hueCycle 3s infinite linear',
+              'fade-in': 'fadeIn 0.5s ease-out',
+            },
+            keyframes: {
+              hueCycle: {
+                '0%': { filter: 'hue-rotate(0deg)' },
+                '100%': { filter: 'hue-rotate(360deg)' },
+              },
+              fadeIn: {
+                '0%': { opacity: '0' },
+                '100%': { opacity: '1' },
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      /* Custom scrollbar for webkit */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #121212;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #333;
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #444;
+      }
+      
+      /* Target existing blue classes if they are hardcoded */
+      .text-blue-400 { color: #098DE2 !important; }
+      .text-blue-500 { color: #098DE2 !important; }
+      .text-blue-600 { color: #098DE2 !important; }
+      .bg-blue-400 { background-color: #098DE2 !important; }
+      .bg-blue-500 { background-color: #098DE2 !important; }
+      .bg-blue-600 { background-color: #098DE2 !important; }
+      .border-blue-500 { border-color: #098DE2 !important; }
+      .focus\:border-blue-500:focus { border-color: #098DE2 !important; }
+      .focus\:ring-blue-500:focus { --tw-ring-color: #098DE2 !important; }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.30.0",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "uuid": "https://aistudiocdn.com/uuid@^13.0.0"
+  }
+}
+</script>
+</head>
+  <body class="bg-gray-900 text-white overflow-y-auto">
+    <div id="root"></div>
+  </body>
+</html>
